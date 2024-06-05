@@ -1,0 +1,11 @@
+<div class="welcome-container">
+  <div class="container">
+    <img class="welcome-image" src="assets/logo.png" height="100" width="100" alt="Perros">
+    <h1 class="welcome-heading">¡Bienvenido al Albergue de {{albergue?.localidad || ''}}!</h1>
+    <p class="welcome-text">Empieza a pasear perretes !</p>
+    <button class="welcome-button" routerLink="/lista">Ver lista de perros</button>
+    <h3>Teléfono de contacto</h3>
+    <p>{{albergue?.numTelefono}}</p>
+  </div>
+</div>
+

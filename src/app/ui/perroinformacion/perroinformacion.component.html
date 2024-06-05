@@ -1,0 +1,63 @@
+<div class="articles">
+  <article>
+    <figure>
+      <img [src]="dog?.fotoURL" alt="Dog Photo" class="dog-photo" (load)="cargado()">
+      <img *ngIf="!loaded" src="assets/loading.gif" alt="loading">
+    </figure>
+    <div class="article-preview">
+      <h2>{{ dog!.nombre }}</h2>
+      <p>Edad: {{ calculateAge(dog!.fechaNacimiento) }}</p>
+      <p>PPP: {{ dog?.ppp ? 'Si' : 'No' }}</p>
+      <p>Peso: {{ dog?.peso }} kg</p>
+      <div class="buttons row" *ngIf="!dog?.adoptante">
+        <div class="col dr">
+          <button class="btn btn-success " (click)="pasear()">Pasear</button>
+        </div>
+
+        <div *ngIf="userId === albergueId" class="justify-content-end col izq">
+          <button class="btn btn-primary" (click)="editar()">Editar</button>
+          <button class="btn btn-dark" (click)="adoptar()">Adoptar</button>
+        </div>
+        <hr>
+        <div *ngIf="dog?.paseos && dog?.paseos?.length || 0 > 0">
+          <h2>Paseos</h2>
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Duración</th>
+              <th>Observaciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fecha of dog?.paseos">
+              <td>{{ fecha.fecha | date:'dd/LL/yyyy' }}</td>
+              <td>{{ fecha.duracion }} minutos</td>
+              <td [innerHTML]="fecha.observaciones | lineBreak:maxChars"></td>
+
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div *ngIf="dog!.adoptante">
+        <ng-container *ngIf="albergueId === userId">
+          <hr>
+          <h2>Información del Adoptante</h2>
+          <p>Nombre: {{ dog?.adoptante?.datos?.nombre }}</p>
+          <p>Email: {{ dog?.adoptante?.datos?.email }}</p>
+          <p>Teléfono: {{ dog?.adoptante?.datos?.telefono }}</p>
+        </ng-container>
+        <ng-container *ngIf="albergueId !== userId">
+          <hr>
+          <p>Perro adoptado !</p>
+        </ng-container>
+
+      </div>
+    </div>
+  </article>
+</div>
+
+
+
+

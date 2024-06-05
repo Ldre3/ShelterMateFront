@@ -1,0 +1,31 @@
+
+<nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="#!" [routerLink]="['/bienvenido']"
+    ><img
+      id="logo"
+      src="assets/logo.png"
+      alt="Logo"
+      draggable="false"
+      height="30"
+      width="30"
+    /></a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
+      <fa-icon [icon]="faBarsStaggered"></fa-icon>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#!" [routerLink]="['/lista']"><fa-icon [icon]="faList"></fa-icon>Lista</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#!" [routerLink]="['/tablon']"><fa-icon [icon]="faMessage"></fa-icon>Tablón</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" (click)="salir()" [routerLink]="['/home']" href="#!"><fa-icon [icon]="faRightFromBracket"></fa-icon>Salir</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

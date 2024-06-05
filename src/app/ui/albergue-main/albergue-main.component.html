@@ -1,0 +1,41 @@
+<ng-container *ngIf="perros.cargando">
+  <div class="loading">
+    <img src="assets/loading.gif" alt="loading" >
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!perros.cargando">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col">
+        <div class="input-group">
+            <input [(ngModel)]="perros.busca" name="busqueda" type="text" class="form-control" placeholder="Buscar por nombre...">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" (click)="onSubmit()" >Buscar</button>
+            </div>
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" (click)="resetListaPerros()">Reestablecer</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center perros-row">
+      <ng-container *ngFor="let perro of perros.listaPerros; let i = index">
+        <div class="col-3 col-s-12 col-xs-12">
+          <app-perrodetalle [perro]="perro" [id]="perro.id"></app-perrodetalle>
+        </div>
+      </ng-container>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <button *ngIf="idGestor===user.id" class="btn btn-success" routerLink="/lista/altaPerro">Agregar Nuevo Perro</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+<div class="container" *ngIf="!mensaje.cargando">
+  <div class="row">
+    <ng-container *ngFor="let mensaje of mensaje.listaMensajes">
+      <div class="col-md-3">
+        <app-mensaje-detalle [mensaje]="mensaje"></app-mensaje-detalle>
+      </div>
+    </ng-container>
+    <div class="col-md-12 text-center" *ngIf="usuarios.usuario?.id === albergue.albergue?.usuarioGestor?.id">
+      <button class="btn btn-primary" routerLink="/tablon/agregarAnuncio">Agregar Anuncio</button>
+    </div>
+  </div>
+</div>
+
+<div class="loading" *ngIf="mensaje.cargando">
+  <img class="loading" src="assets/loading.gif">
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Registro de Perro</h2>
+          <form>
+            <div class="form-group">
+              <label for="nombre">Nombre <span class="mandatory">*</span></label>
+              <input type="text" id="nombre" class="form-control" [(ngModel)]="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="fechaNacimiento">Fecha de Nacimiento <span class="mandatory">*</span></label>
+              <input type="date" id="fechaNacimiento" class="form-control" [(ngModel)]="fechaNacimiento" name="fechaNacimiento" required>
+            </div>
+            <div class="form-group">
+              <label for="peso">Peso (kg) <span class="mandatory">*</span></label>
+              <input type="number" id="peso" class="form-control" [(ngModel)]="peso" name="number" required>
+            </div>
+            <div class="form-group">
+              <label for="esPPP">¿Es PPP? <span class="mandatory">*</span></label>
+              <select id="esPPP" class="form-control" [(ngModel)]="ppp" name="ppp" required>
+                <option value="no" [ngValue]="false" selected>No</option>
+                <option value="si" [ngValue]="true" >Sí</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="foto">Foto <span class="mandatory">*</span></label><br>
+              <input type="file" id="foto" class="form-control-file" (change)="onFileSelected($event)" required>
+            </div>
+            <button type="submit" (click)="agregar()" class="btn btn-primary btn-block" [class.disabled]="btndisabled">Registrar Perro</button>
+            <button routerLink="/lista" class="btn btn-secondary btn-block">Cancelar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">¡Bienvenido a ShelterMate!</h2>
+          <form>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input name = 'usuario' [(ngModel)]="usuario" type="email" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input name ='password' [(ngModel)]="password" type="password" id="password" class="form-control">
+              <a href="!#" routerLink="/recordarPassword" class="text-muted">¿Olvidaste tu contraseña?</a>
+            </div>
+                <button type="submit" class="btn btn-primary btn-block text-left" (click)="initSesion()">Iniciar Sesión</button>
+                <button type="button" class="btn btn-secondary btn-block" (click)="register()">Registrarse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

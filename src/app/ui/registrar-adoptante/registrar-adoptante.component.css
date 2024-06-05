@@ -1,0 +1,51 @@
+.btn {
+  margin-top: 10px;
+}
+::ng-deep body {
+  background-color: #dbe7fe;
+}
+.container {
+  margin-top: 5%;
+}
+
+.card {
+  background-color: #eff5ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #1f34ae;
+}
+
+.btn-primary {
+  background-color: #1f34ae;
+  border-color: #1f34ae;
+  margin-right: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #172054;
+  border-color: #172054;
+}
+
+
+.form-group label {
+  color: #1f34ae;
+}
+
+.btn-secondary {
+  background-color: #E0E0E0;
+  border-color: #E0E0E0;
+  color: #000000;
+}
+
+.btn-secondary:hover {
+  background-color: #BDBDBD;
+  border-color: #BDBDBD;
+}
+
+.mandatory {
+  color: red;
+  margin-left: 3px;
+}

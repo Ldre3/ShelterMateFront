@@ -1,0 +1,13 @@
+.albergue-item {
+  padding: 15px;
+  border-bottom: 1px solid #CCCCCC;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.localidad {
+  color: #172054;
+  font-weight: bold;
+  margin: 0;
+}

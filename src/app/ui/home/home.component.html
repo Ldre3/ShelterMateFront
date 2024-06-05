@@ -1,0 +1,27 @@
+<div class="container mt-5" *ngIf="!loading">
+  <h2 class="text-center">Tus albergues</h2>
+  <ng-container >
+    <div *ngFor="let albergue of albergues" >
+      <app-alberguedetalle [albergue]="albergue"></app-alberguedetalle>
+    </div>
+  </ng-container>
+
+  <div class="d-flex justify-content-between mt-3">
+    <div>
+      <button class="btn btn-primary" (click)="registerAlbergue()">Agregar Albergue</button>
+      <button class="btn btn-primary" (click)="entrarAlbergue()">Entrar en un albergue</button>
+    </div>
+    <div>
+      <button class="btn btn-warning" routerLink="/nuevaPassword">Cambiar contraseña</button>
+      <button class="btn btn-secondary" (click)="logOut()">Salir</button>
+    </div>
+  </div>
+</div>
+
+
+<ng-container *ngIf="loading">
+  <div class="loading">
+    <img src="assets/loading.gif" alt="loading" >
+  </div>
+</ng-container>
+

@@ -1,0 +1,15 @@
+<div class="articles">
+  <article>
+    <figure>
+      <a routerLink="/lista/detallePerro/{{id}}" href="!#"><img  [src]="perro.fotoURL" alt="Foto del perro" (load)="cargado()"></a>
+      <img  *ngIf="!loaded" src="assets/loading.gif" alt="loading">-->
+    </figure>
+    <div class="article-preview">
+      <a routerLink="/lista/detallePerro/{{id}}" href="!#"><h2>{{ perro.nombre }}</h2></a>
+      <p *ngIf="perro.adoptante">Perrete adoptado !</p>
+      <p *ngIf="perro.paseos.length!==0&&!perro.adoptante">{{ perro.paseos[0]?.fecha | date }}</p>
+      <p *ngIf="perro.paseos.length===0&&!perro.adoptante">Sin paseos aun <fa-icon [icon]="faFaceSadCry"></fa-icon></p>
+      <button *ngIf="albergueService?.albergue?.usuarioGestor?.id === userService?.usuario?.id " class="delete-button" (click)="deleteDog()">Delete</button>
+    </div>
+  </article>
+</div>

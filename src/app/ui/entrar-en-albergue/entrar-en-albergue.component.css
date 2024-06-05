@@ -1,0 +1,67 @@
+.card {
+  background-color: #eff5ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+::ng-deep body {
+  background-color: #dbe7fe;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  color: #1f34ae;
+}
+
+.required {
+  color: red;
+  margin-left: 3px;
+}
+
+.btn-primary {
+  background-color: #1f34ae;
+  border-color: #1f34ae;
+  margin-right: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #172054;
+  border-color: #172054;
+}
+
+.btn-secondary {
+  background-color: #E0E0E0;
+  border-color: #E0E0E0;
+  color: #000000;
+}
+
+.btn-secondary:hover {
+  background-color: #BDBDBD;
+  border-color: #BDBDBD;
+}
+
+select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('/assets/baseline-arrow-downward.svg');
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 12px);
+  background-position-y: center;
+}
+
+h2 {
+  color: #1f34ae;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+

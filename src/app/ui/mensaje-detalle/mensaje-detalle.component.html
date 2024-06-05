@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="message-bubble">
+    <div class="message-content">
+      <p class="message-title">{{ mensaje.titulo }}</p>
+      <p class="message-text" [innerHTML]="mensaje.contenido | lineBreak:30"></p>
+      <p class="message-date">{{ mensaje.fechaPublicacion | date :"short" }}</p>
+    </div>
+    <button class="delete-button" *ngIf="usuarios.usuario?.id === albergue.albergue?.usuarioGestor?.id" (click)="deleteMessage()" >Delete</button>
+  </div>
+</div>
+
+
