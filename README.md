@@ -3,7 +3,7 @@
 Este repositorio contiene el código fuente del front-end de la aplicación ShelterMate
 
 ## Instalación
-Es necesario tener cloneado el repositorio de [ShelterMate Back]()
+Es necesario tener cloneado el repositorio de [ShelterMate Back](https://github.com/Ldre3/ShelterMateBack)
 
 Una vez clonado el repositorio, se debe instalar las dependencias
 ```bash
